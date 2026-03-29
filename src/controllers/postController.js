@@ -12,6 +12,7 @@ function criarPost(req, res) {
         user_id:    req.user.id,
         user_email: req.user.email,
         username:   req.user.username || null,
+        name:       req.user.name || null,   // ← adiciona essa linha
         title,
         content
     };
