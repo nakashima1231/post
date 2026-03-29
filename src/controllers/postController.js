@@ -11,6 +11,7 @@ function criarPost(req, res) {
     const post = {
         user_id:    req.user.id,
         user_email: req.user.email,
+        username:   req.user.username || null,
         title,
         content
     };
