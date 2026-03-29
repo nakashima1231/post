@@ -2,15 +2,15 @@ const db = require("../database/db");
 
 function createPost(post, callback) {
     db.query(
-        "INSERT INTO posts (user_id, user_email, username, title, content) VALUES (?, ?, ?, ?, ?)",
-        [post.user_id, post.user_email, post.username, post.title, post.content],
+        "INSERT INTO posts (user_id, user_email, username, name, title, content) VALUES (?, ?, ?, ?, ?, ?)",
+        [post.user_id, post.user_email, post.username, post.name, post.title, post.content],
         callback
     );
 }
 
 function getAllPosts(callback) {
     db.query(
-        "SELECT id, user_id, user_email, username, title, content, created_at FROM posts ORDER BY created_at DESC",
+        "SELECT id, user_id, user_email, username, name, title, content, created_at FROM posts ORDER BY created_at DESC",
         callback
     );
 }
